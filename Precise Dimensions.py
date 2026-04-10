@@ -1,3 +1,13 @@
+bl_info = {
+    "name": "Precise Dimensions",
+    "author": "Paralhama",
+    "version": (1, 0),
+    "blender": (2, 80, 0),
+    "location": "View3D > Sidebar > Item",
+    "description": "Mostra dimensões precisas em mm",
+    "category": "3D View",
+}
+
 import bpy
 
 
@@ -10,7 +20,7 @@ def format_dimension(value_meters):
 class DimensionsPanel(bpy.types.Panel):
     """Creates a dimensions panel in the Sidebar"""
     bl_label = "Precise Dimensions"
-    bl_idname = "OBJECT_PT_dimensions"
+    bl_idname = "OBJECT_PT_precise_dimensions"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "Item"
@@ -19,10 +29,13 @@ class DimensionsPanel(bpy.types.Panel):
         layout = self.layout
         obj = context.object
 
-        col = layout.column()
-        col.label(text="X: " + format_dimension(obj.dimensions.x))
-        col.label(text="Y: " + format_dimension(obj.dimensions.y))
-        col.label(text="Z: " + format_dimension(obj.dimensions.z))
+        if obj:
+            col = layout.column()
+            col.label(text="X: " + format_dimension(obj.dimensions.x))
+            col.label(text="Y: " + format_dimension(obj.dimensions.y))
+            col.label(text="Z: " + format_dimension(obj.dimensions.z))
+        else:
+            layout.label(text="Nenhum objeto selecionado")
 
 
 def register():
