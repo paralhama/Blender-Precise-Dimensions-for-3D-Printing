@@ -28,4 +28,5 @@ The native Blender dimensions panel can lose precision or display values without
 
 Open the sidebar in the 3D Viewport with `N`, then go to the **Item** tab. The **Dimensions** panel will show the X, Y, Z values of the selected object in mm.
 
-<img width="1505" height="815" alt="image" src="https://github.com/user-attachments/assets/695a7b81-b655-4ddf-8721-3ce20532236f" />
+<img width="1472" height="811" alt="image" src="https://github.com/user-attachments/assets/00b76adc-2f4f-4ef5-9e9b-63394eb20616" />
+
