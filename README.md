@@ -1,10 +1,11 @@
 # Blender Print Dimensions
 
-Blender add-on that displays object dimensions in mm with clean decimal formatting — no trailing zeros. Built for 3D printing workflows.
+Blender add-on that displays object dimensions in mm with clean decimal formatting no trailing zeros. Built for 3D printing workflows.
 
 ## What it does
 
-The native Blender dimensions panel can lose precision or display values without decimals. This add-on adds a clean panel in the sidebar that shows X, Y, Z dimensions in mm exactly as they are — no rounding, no trailing zeros.
+The native Blender dimensions panel can lose precision or display values without decimals. 
+This add-on adds a clean panel in the sidebar that shows X, Y, Z dimensions in mm exactly as they are no rounding, no trailing zeros.
 
 | Value | Native Blender | This add-on |
 |-------|---------------|-------------|
@@ -26,4 +27,9 @@ The native Blender dimensions panel can lose precision or display values without
 
 ## Usage
 
-Open the sidebar in the 3D Viewport with `N`, then go to the **Item** tab. The **Dimensions** panel will show the X, Y, Z values of the selected object in mm.
+Open the sidebar in the 3D Viewport with `N`, then go to the **Item** tab.
+
+The **Dimensions** panel will show the X, Y, Z values of the selected object in mm.
+
+<img width="1472" height="811" alt="image" src="https://github.com/user-attachments/assets/00b76adc-2f4f-4ef5-9e9b-63394eb20616" />
+
