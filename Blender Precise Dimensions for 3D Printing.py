@@ -1,21 +1,18 @@
 bl_info = {
-    "name": "Precise Dimensions",
+    "name": "Blender Precise Dimensions for 3D Printing",
     "author": "Paralhama",
-    "version": (1, 0),
+    "version": (1, 2),
     "blender": (2, 80, 0),
     "location": "View3D > Sidebar > Item",
-    "description": "Mostra dimensões precisas em mm",
+    "description": "Show precise dimensions in millimeters",
     "category": "3D View",
 }
 
 import bpy
 
-
-def format_dimension(value_meters):
-    """Converte metros para mm e formata sem zeros desnecessários"""
-    value_mm = value_meters * 1000
-    return f"{value_mm:.4f}".rstrip('0').rstrip('.') + " mm"
-
+def format_dimension(value):
+    """Format value in millimeters without unnecessary zeros"""
+    return f"{value:.4f}".rstrip('0').rstrip('.') + " mm"
 
 class DimensionsPanel(bpy.types.Panel):
     """Creates a dimensions panel in the Sidebar"""
@@ -35,16 +32,13 @@ class DimensionsPanel(bpy.types.Panel):
             col.label(text="Y: " + format_dimension(obj.dimensions.y))
             col.label(text="Z: " + format_dimension(obj.dimensions.z))
         else:
-            layout.label(text="Nenhum objeto selecionado")
-
+            layout.label(text="No objects selected")
 
 def register():
     bpy.utils.register_class(DimensionsPanel)
 
-
 def unregister():
     bpy.utils.unregister_class(DimensionsPanel)
-
 
 if __name__ == "__main__":
     register()
